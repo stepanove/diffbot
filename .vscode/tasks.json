@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "colcon build",
+            "type": "shell",
+            "command": "colcon build --symlink-install",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "lanuch sim",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch diffbot sim.launch.py",
+            "problemMatcher": [],
+        },
+        {
+            "label": "lanuch teleop keyboard",
+            "type": "shell",
+            "command": "ros2 run  teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true",
+            "problemMatcher": [],
+        }
+    ]
+}
