@@ -18,7 +18,9 @@ RUN userdel -r $(getent passwd ${USER_UID} | cut -d: -f1) || \
     ros-${ROS_DISTRO}-gz-ros2-control \
     ros-${ROS_DISTRO}-ros2-controllers \
     ros-${ROS_DISTRO}-ros2-control \
-    ros-${ROS_DISTRO}-twist-mux \    
+    ros-${ROS_DISTRO}-twist-mux \
+    ros-${ROS_DISTRO}-navigation2 \
+    ros-${ROS_DISTRO}-nav2-bringup \ 
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && rm -rf /var/lib/apt/lists/*
