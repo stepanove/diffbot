@@ -24,6 +24,24 @@
             "type": "shell",
             "command": "ros2 run  teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true",
             "problemMatcher": [],
+        },
+        {
+            "label": "lanuch something",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch ${input:package} ${input:launch_file}",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "package",
+            "type": "promptString",
+            "description": "Package name"
+        },
+        {
+            "id": "launch_file",
+            "type": "promptString",
+            "description": "Launch file name"
         }
     ]
 }
